@@ -21,14 +21,8 @@ class HomepageRepository @Inject constructor(
         emit(Result.Loading)
 
         try {
-            val response = apiService.getHomepageData()
-            // The API returns a list, we want the first item which contains the actual homepage data
-            val homepageData = response.firstOrNull()
-            if (homepageData != null) {
-                emit(Result.Success(homepageData))
-            } else {
-                emit(Result.Error(Exception("No homepage data found")))
-            }
+            val response = apiService.getHomepageData() // Now returns HomepageResponse directly
+            emit(Result.Success(response))
         } catch (e: Exception) {
             emit(Result.Error(e))
         }

@@ -53,7 +53,7 @@ object AppModule {
     fun provideRetrofit(okHttpClient: OkHttpClient, json: Json): Retrofit {
         val contentType = "application/json".toMediaType()
         return Retrofit.Builder()
-            .baseUrl("https://685a82239f6ef9611156b2f0.mockapi.io/")
+            .baseUrl("https://mocki.io/v1/")
             .client(okHttpClient)
             .addConverterFactory(json.asConverterFactory(contentType))
             .build()
