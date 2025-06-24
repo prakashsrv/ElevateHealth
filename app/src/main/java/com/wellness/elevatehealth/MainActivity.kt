@@ -20,13 +20,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ElevateHealthApp()
+            ElevateHealthAppUI()
         }
     }
 }
 
 @Composable
-fun ElevateHealthApp() {
+fun ElevateHealthAppUI() {
     ElevateHealthTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             AppNavigation(modifier = Modifier.padding(innerPadding))
@@ -38,6 +38,6 @@ fun ElevateHealthApp() {
 @Composable
 fun ElevateHealthAppPreview() {
     ElevateHealthTheme {
-        ElevateHealthApp()
+        ElevateHealthAppUI()
     }
 }
