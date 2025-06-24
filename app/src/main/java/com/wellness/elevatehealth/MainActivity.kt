@@ -1,5 +1,6 @@
 package com.wellness.elevatehealth
 
+import AppNavigation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +11,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.wellness.elevatehealth.presentation.navigation.AppNavigation
+import androidx.navigation.compose.rememberNavController
+import com.wellness.elevatehealth.presentation.navigation.BottomNavigationBar
 import com.wellness.elevatehealth.ui.theme.ElevateHealthTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,8 +30,18 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ElevateHealthAppUI() {
     ElevateHealthTheme {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            AppNavigation(modifier = Modifier.padding(innerPadding))
+        val navController = rememberNavController()
+
+        Scaffold(
+            modifier = Modifier.fillMaxSize(),
+            bottomBar = {
+                BottomNavigationBar(navController = navController)
+            }
+        ) { innerPadding ->
+            AppNavigation(
+                navController = navController,
+                modifier = Modifier.padding(innerPadding)
+            )
         }
     }
 }

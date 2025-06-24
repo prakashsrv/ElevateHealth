@@ -1,6 +1,6 @@
 package com.wellness.elevatehealth.domain.usecase
 
-import com.wellness.elevatehealth.data.repository.HealthRepository
+import com.wellness.elevatehealth.data.repository.repository.HealthRepository
 import com.wellness.elevatehealth.util.Result
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

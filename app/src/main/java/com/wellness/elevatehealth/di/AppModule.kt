@@ -1,6 +1,7 @@
 package com.wellness.elevatehealth.di
 
-import android.content.Context
+import com.wellness.elevatehealth.data.repository.remote.HomepageApiService
+
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.wellness.elevatehealth.util.DefaultDispatcherProvider
 import com.wellness.elevatehealth.util.DispatcherProvider
@@ -52,9 +53,15 @@ object AppModule {
     fun provideRetrofit(okHttpClient: OkHttpClient, json: Json): Retrofit {
         val contentType = "application/json".toMediaType()
         return Retrofit.Builder()
-            .baseUrl("https://api.example.com/") // Replace with actual API URL when available
+            .baseUrl("https://685a82239f6ef9611156b2f0.mockapi.io/")
             .client(okHttpClient)
             .addConverterFactory(json.asConverterFactory(contentType))
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideHomepageApiService(retrofit: Retrofit): HomepageApiService {
+        return retrofit.create(HomepageApiService::class.java)
     }
 }
