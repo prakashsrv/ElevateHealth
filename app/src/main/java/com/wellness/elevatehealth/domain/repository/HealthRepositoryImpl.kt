@@ -1,4 +1,4 @@
-package com.wellness.elevatehealth.data.repository.repository
+package com.wellness.elevatehealth.domain.repository
 
 import com.wellness.elevatehealth.util.DispatcherProvider
 import com.wellness.elevatehealth.util.Result

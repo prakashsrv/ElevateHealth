@@ -1,9 +1,9 @@
-package com.wellness.elevatehealth.data.repository.repository
+package com.wellness.elevatehealth.domain.repository
 
 
 
-import com.wellness.elevatehealth.data.repository.model.HomepageResponse
-import com.wellness.elevatehealth.data.repository.remote.HomepageApiService
+import com.wellness.elevatehealth.data.all.model.HomepageResponse
+import com.wellness.elevatehealth.data.all.remote.HomepageApiService
 import com.wellness.elevatehealth.util.DispatcherProvider
 import com.wellness.elevatehealth.util.Result
 import kotlinx.coroutines.flow.Flow
@@ -21,7 +21,7 @@ class HomepageRepository @Inject constructor(
         emit(Result.Loading)
 
         try {
-            val response = apiService.getHomepageData() // Now returns HomepageResponse directly
+            val response = apiService.getHomepageData()
             emit(Result.Success(response))
         } catch (e: Exception) {
             emit(Result.Error(e))

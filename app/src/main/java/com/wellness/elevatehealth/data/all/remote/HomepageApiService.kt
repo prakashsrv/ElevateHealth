@@ -1,7 +1,7 @@
-package com.wellness.elevatehealth.data.repository.remote
+package com.wellness.elevatehealth.data.all.remote
 
 
-import com.wellness.elevatehealth.data.repository.model.HomepageResponse
+import com.wellness.elevatehealth.data.all.model.HomepageResponse
 import retrofit2.http.GET
 
 interface HomepageApiService {

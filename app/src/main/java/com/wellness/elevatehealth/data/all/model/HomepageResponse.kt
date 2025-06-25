@@ -1,4 +1,4 @@
-package com.wellness.elevatehealth.data.repository.model
+package com.wellness.elevatehealth.data.all.model
 
 import kotlinx.serialization.Serializable
 

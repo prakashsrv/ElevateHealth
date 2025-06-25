@@ -19,11 +19,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.wellness.elevatehealth.data.repository.model.Nutrition
-import com.wellness.elevatehealth.data.repository.model.QuickAction
-import com.wellness.elevatehealth.data.repository.model.TodayActivity
-import com.wellness.elevatehealth.data.repository.model.UserInfo
-import com.wellness.elevatehealth.data.repository.model.WeeklyProgress
+import com.wellness.elevatehealth.data.all.model.Nutrition
+import com.wellness.elevatehealth.data.all.model.QuickAction
+import com.wellness.elevatehealth.data.all.model.TodayActivity
+import com.wellness.elevatehealth.data.all.model.UserInfo
+import com.wellness.elevatehealth.data.all.model.WeeklyProgress
 
 @Composable
 fun GreetingHeader(
@@ -33,7 +33,7 @@ fun GreetingHeader(
     Card(
         modifier = modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primary
+            containerColor = Color.Red
         ),
         shape = RoundedCornerShape(16.dp)
     ) {

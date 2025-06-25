@@ -1,9 +1,9 @@
 package com.wellness.elevatehealth.di
 
 
-import com.wellness.elevatehealth.data.repository.remote.HomepageApiService
-import com.wellness.elevatehealth.data.repository.repository.HealthRepository
-import com.wellness.elevatehealth.data.repository.repository.HomepageRepository
+import com.wellness.elevatehealth.data.all.remote.HomepageApiService
+import com.wellness.elevatehealth.domain.repository.HealthRepository
+import com.wellness.elevatehealth.domain.repository.HomepageRepository
 import com.wellness.elevatehealth.util.DispatcherProvider
 import dagger.Module
 import dagger.Provides

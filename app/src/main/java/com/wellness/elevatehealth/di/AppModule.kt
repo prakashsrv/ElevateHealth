@@ -1,6 +1,6 @@
 package com.wellness.elevatehealth.di
 
-import com.wellness.elevatehealth.data.repository.remote.HomepageApiService
+import com.wellness.elevatehealth.data.all.remote.HomepageApiService
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.wellness.elevatehealth.util.DefaultDispatcherProvider
@@ -8,7 +8,6 @@ import com.wellness.elevatehealth.util.DispatcherProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType

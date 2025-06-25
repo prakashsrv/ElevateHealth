@@ -2,7 +2,8 @@ package com.wellness.elevatehealth.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.wellness.elevatehealth.data.repository.model.HomepageResponse
+import com.wellness.elevatehealth.data.all.model.HomepageResponse
+import com.wellness.elevatehealth.domain.repository.HomepageRepository
 import com.wellness.elevatehealth.domain.usecase.GetHomepageDataUseCase
 import com.wellness.elevatehealth.util.DispatcherProvider
 import com.wellness.elevatehealth.util.Result
@@ -15,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getHomepageDataUseCase: GetHomepageDataUseCase,
+    private val homepageRepository: HomepageRepository,
     private val dispatchers: DispatcherProvider
 ) : ViewModel() {
 
@@ -28,7 +29,7 @@ class HomeViewModel @Inject constructor(
 
     fun loadHomepageData() {
         viewModelScope.launch(dispatchers.main) {
-            getHomepageDataUseCase().collect { result ->
+            homepageRepository.getHomepageData().collect { result ->
                 _uiState.value = when (result) {
                     is Result.Loading -> {
                         _uiState.value.copy(isLoading = true, error = null)
